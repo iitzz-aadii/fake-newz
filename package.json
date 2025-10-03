@@ -8,7 +8,10 @@
     "server": "node server.js",
     "dev": "node server.js",
     "build": "echo 'Static site - no build required'",
-    "test": "echo 'Tests not implemented yet'"
+    "test": "echo 'Tests not implemented yet'",
+    "netlify:dev": "netlify dev",
+    "netlify:build": "npm install",
+    "setup": "node setup-netlify.js"
   },
   "keywords": [
     "fake-news",

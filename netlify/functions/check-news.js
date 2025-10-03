@@ -56,12 +56,14 @@ exports.handler = async (event, context) => {
     let result = null;
     const geminiApiKey = process.env.GEMINI_API_KEY;
 
-    if (geminiApiKey) {
+    if (geminiApiKey && geminiApiKey !== "your_gemini_api_key_here") {
       try {
         result = await analyzeWithGemini(contentToAnalyze, geminiApiKey);
       } catch (error) {
         console.error("Gemini API error:", error);
       }
+    } else {
+      console.log("Gemini API key not configured, using fallback analysis");
     }
 
     // Fallback to simple analysis if Gemini fails
