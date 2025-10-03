@@ -1,0 +1,42 @@
+{
+  "name": "truthlens",
+  "version": "1.0.0",
+  "description": "AI-powered fake news detection platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "server": "node server.js",
+    "dev": "node server.js",
+    "build": "echo 'Static site - no build required'",
+    "test": "echo 'Tests not implemented yet'"
+  },
+  "keywords": [
+    "fake-news",
+    "ai",
+    "detection",
+    "news",
+    "verification",
+    "gemini",
+    "machine-learning"
+  ],
+  "author": "TruthLens Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/truthlens.git"
+  },
+  "homepage": "https://truthlens.netlify.app"
+}

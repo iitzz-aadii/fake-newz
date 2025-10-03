@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TruthLens – Fake News Detector</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <i class="fas fa-search-plus"></i>
+          <span>TruthLens</span>
+        </div>
+        <div class="nav-links">
+          <a href="#" class="nav-link active" data-page="home">Home</a>
+          <a href="#" class="nav-link" data-page="history">History</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Homepage -->
+      <div id="home-page" class="page active">
+        <div class="hero-section">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              Uncover the Truth.<br />Analyze News with AI-powered Accuracy.
+            </h1>
+            <p class="hero-subtitle">
+              Stop misinformation in its tracks. Our advanced AI analyzes news
+              articles and links to give you instant credibility assessments.
+            </p>
+            <div class="trust-statement">
+              <i class="fas fa-shield-check"></i>
+              Powered by Google Gemini AI - Helping you spot misinformation with
+              advanced AI
+            </div>
+
+            <div class="input-section">
+              <div class="input-container">
+                <textarea
+                  id="news-input"
+                  placeholder="Paste an article URL or text here..."
+                  rows="5"
+                ></textarea>
+                <div class="input-actions">
+                  <button id="clear-btn" class="btn-secondary">
+                    <i class="fas fa-times"></i>
+                    Clear
+                  </button>
+                  <button id="check-btn" class="btn-primary">
+                    <i class="fas fa-shield-alt"></i>
+                    Check Authenticity
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- How It Works Section -->
+            <div class="how-it-works">
+              <h2>How It Works</h2>
+              <div class="steps">
+                <div class="step">
+                  <div class="step-icon-container">
+                    <div class="step-number">1</div>
+                    <i class="fas fa-link step-icon"></i>
+                  </div>
+                  <h3>Paste a Link</h3>
+                  <p>Add your news article URL or text</p>
+                </div>
+                <div class="step">
+                  <div class="step-icon-container">
+                    <div class="step-number">2</div>
+                    <i class="fas fa-brain step-icon"></i>
+                  </div>
+                  <h3>We Analyze It</h3>
+                  <p>Our AI examines credibility and bias</p>
+                </div>
+                <div class="step">
+                  <div class="step-icon-container">
+                    <div class="step-number">3</div>
+                    <i class="fas fa-file-alt step-icon"></i>
+                  </div>
+                  <h3>Get Your Report</h3>
+                  <p>Receive instant credibility assessment</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="features">
+              <div class="feature">
+                <i class="fas fa-search"></i>
+                <h3>Advanced AI Analysis</h3>
+                <p>Detect misinformation with high accuracy</p>
+              </div>
+              <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Multi-Layer Verification</h3>
+                <p>Source credibility and fact-checking</p>
+              </div>
+              <div class="feature">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Detailed Insights</h3>
+                <p>Comprehensive confidence scoring</p>
+              </div>
+            </div>
+
+            <!-- Trust Signals Section -->
+            <div class="trust-signals">
+              <div class="live-demo">
+                <h3>Live Example</h3>
+                <div class="demo-card" id="demo-card">
+                  <div class="demo-text">
+                    "Scientists discover miracle cure that doctors don't want
+                    you to know about..."
+                  </div>
+                  <div class="demo-result" id="demo-result">
+                    <div class="demo-checking" id="demo-checking">
+                      <i class="fas fa-spinner fa-spin"></i>
+                      <span>Analyzing...</span>
+                    </div>
+                    <div
+                      class="demo-final"
+                      id="demo-final"
+                      style="display: none"
+                    >
+                      <span class="demo-label fake">FAKE</span>
+                      <span class="demo-confidence">95% Confidence</span>
+                    </div>
+                  </div>
+                  <div class="demo-explanation">
+                    This article shows typical misinformation patterns and lacks
+                    credible sources.
+                  </div>
+                </div>
+              </div>
+              <div class="trust-badges">
+                <h3>Trusted Technology</h3>
+                <div class="badges">
+                  <div class="badge">
+                    <i class="fab fa-google"></i>
+                    <span>Powered by<br />Google Gemini</span>
+                    <p class="badge-desc">Our core AI analysis engine</p>
+                  </div>
+                  <div class="badge">
+                    <i class="fas fa-shield-check"></i>
+                    <span>AI-Verified<br />Analysis</span>
+                    <p class="badge-desc">Trusted by fact-checkers</p>
+                  </div>
+                  <div class="badge">
+                    <i class="fas fa-clock"></i>
+                    <span>Real-time<br />Results</span>
+                    <p class="badge-desc">Instant credibility scoring</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Page -->
+      <div id="results-page" class="page">
+        <div class="results-container">
+          <button id="back-btn" class="btn-back">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+          </button>
+
+          <div class="results-card">
+            <div class="card-header">
+              <h2>Authenticity Report</h2>
+              <div id="result-timestamp" class="timestamp">
+                <i class="fas fa-clock"></i>
+                <span class="timestamp-text">Real-time Analysis</span>
+              </div>
+            </div>
+
+            <div class="result-main">
+              <div class="confidence-section">
+                <div id="confidence-score" class="confidence-score">
+                  <span class="score-value">--</span>
+                  <span class="score-label">Confidence</span>
+                </div>
+                <div id="result-label" class="result-label">
+                  <span class="label-text">Analyzing...</span>
+                </div>
+              </div>
+
+              <div class="visualization-section">
+                <h3>Probability Distribution</h3>
+                <div class="chart-container">
+                  <div class="probability-bars">
+                    <div class="prob-bar">
+                      <div class="bar-label">Fake</div>
+                      <div class="bar-container">
+                        <div
+                          id="fake-bar"
+                          class="bar fake-bar"
+                          style="width: 0%"
+                        ></div>
+                      </div>
+                      <div id="fake-percent" class="bar-percent">0%</div>
+                    </div>
+                    <div class="prob-bar">
+                      <div class="bar-label">Biased</div>
+                      <div class="bar-container">
+                        <div
+                          id="biased-bar"
+                          class="bar biased-bar"
+                          style="width: 0%"
+                        ></div>
+                      </div>
+                      <div id="biased-percent" class="bar-percent">0%</div>
+                    </div>
+                    <div class="prob-bar">
+                      <div class="bar-label">Trusted</div>
+                      <div class="bar-container">
+                        <div
+                          id="trusted-bar"
+                          class="bar trusted-bar"
+                          style="width: 0%"
+                        ></div>
+                      </div>
+                      <div id="trusted-percent" class="bar-percent">0%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="keywords-section">
+                <h3>Key Indicators</h3>
+                <p class="indicators-explanation">
+                  <i class="fas fa-info-circle"></i>
+                  These entities and topics were identified as central to our
+                  analysis and cross-referenced against our fact-checking
+                  database.
+                </p>
+                <div id="keywords-container" class="keywords-container">
+                  <!-- Keywords will be populated here -->
+                </div>
+              </div>
+
+              <!-- Detailed Report Section -->
+              <div class="detailed-report-section">
+                <button class="expand-btn" id="expand-report">
+                  <i class="fas fa-chevron-down"></i>
+                  <span>Detailed Analysis Report</span>
+                </button>
+                <div
+                  class="detailed-content"
+                  id="detailed-content"
+                  style="display: none"
+                >
+                  <div class="report-grid">
+                    <div class="source-credibility">
+                      <h4><i class="fas fa-newspaper"></i> Source Analysis</h4>
+                      <div class="credibility-score">
+                        <span class="score-label">Source Credibility:</span>
+                        <span class="score-value" id="source-score"
+                          >--/100</span
+                        >
+                      </div>
+                      <p class="source-details" id="source-details">
+                        Analyzing source reputation and historical accuracy...
+                      </p>
+                    </div>
+                    <div class="sentiment-analysis">
+                      <h4>
+                        <i class="fas fa-chart-line"></i> Sentiment Analysis
+                      </h4>
+                      <div class="sentiment-result">
+                        <span class="sentiment-label" id="sentiment-label"
+                          >Neutral</span
+                        >
+                        <div class="sentiment-bar">
+                          <div class="sentiment-fill" id="sentiment-fill"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="citations-section">
+                      <h4><i class="fas fa-link"></i> External References</h4>
+                      <div class="citations-list" id="citations-list">
+                        <p class="loading-citations">
+                          Gathering external verification sources...
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Share Section -->
+              <div class="share-section">
+                <button class="share-btn" id="share-result">
+                  <i class="fas fa-share-alt"></i>
+                  Share Analysis
+                </button>
+                <div
+                  class="share-options"
+                  id="share-options"
+                  style="display: none"
+                >
+                  <button class="share-option" data-platform="twitter">
+                    <i class="fab fa-twitter"></i> Twitter
+                  </button>
+                  <button class="share-option" data-platform="facebook">
+                    <i class="fab fa-facebook"></i> Facebook
+                  </button>
+                  <button class="share-option" data-platform="copy">
+                    <i class="fas fa-copy"></i> Copy Link
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- History Page -->
+      <div id="history-page" class="page">
+        <div class="history-container">
+          <div class="page-header">
+            <h2>Analysis History</h2>
+            <button id="clear-history-btn" class="btn-secondary">
+              <i class="fas fa-trash"></i>
+              Clear History
+            </button>
+          </div>
+
+          <div id="history-list" class="history-list">
+            <!-- History items will be populated here -->
+          </div>
+
+          <div id="empty-history" class="empty-state">
+            <i class="fas fa-history"></i>
+            <h3>No Analysis History</h3>
+            <p>Your analyzed articles will appear here</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Company</h4>
+            <a href="#" class="footer-link">About Us</a>
+            <a href="#" class="footer-link">Contact</a>
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+          </div>
+          <div class="footer-section">
+            <h4>Technology</h4>
+            <a href="#" class="footer-link">How It Works</a>
+            <a href="#" class="footer-link">API Documentation</a>
+            <a href="#" class="footer-link">Accuracy Reports</a>
+            <a href="#" class="footer-link">Research Papers</a>
+          </div>
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <a href="#" class="footer-link">Media Literacy Guide</a>
+            <a href="#" class="footer-link">Fact-Checking Tips</a>
+            <a href="#" class="footer-link">News Sources Database</a>
+            <a href="#" class="footer-link">Blog</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 TruthLens. All rights reserved.</p>
+          <p>Powered by Google Gemini AI</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+      <div class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Analyzing article...</p>
+      </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="netlify-api-integration.js"></script>
+    <script src="api-integration.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
