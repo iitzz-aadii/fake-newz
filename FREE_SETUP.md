@@ -16,6 +16,7 @@ Get **real fake news detection** with **ZERO cost** and **no API keys required**
 
 ---
 
+
 ## 🚀 **Quick Setup (2 minutes)**
 
 ### **Step 1: Enable Free Mode**
